@@ -14,7 +14,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Scanner;
 import java.util.TimeZone;
 
 @Slf4j
@@ -22,20 +21,12 @@ public class ZoneServer {
     public static void main(String[] args) {
         try (ServerSocket serverSocket = new ServerSocket(1234)) {
             System.out.println("Server is running and listening on port 1234");
-            System.out.println("enter stop to exit ");
-            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-            String userInput;
             while (true) {
                 Socket socket = serverSocket.accept();
                 System.out.println("Client connected");
                 final long rcvTime = System.currentTimeMillis();
                 handlePacket(socket,rcvTime);
                 socket.close();
-                // 读取控制台输入并检查是否为 "stop"，如果是则退出循环
-                userInput = br.readLine();
-                if (userInput.trim().equalsIgnoreCase("stop")) {
-                    break;
-                }
             }
         } catch (IOException e) {
             e.printStackTrace();
