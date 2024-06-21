@@ -75,3 +75,16 @@
 ### 3.2 运行 ZoneServer
 
 ![ct-6](img/ct-6.png)
+
+## 4. Windows权限
+
+测试时,若遇见如下图权限问题;需要开启windows权限
+
+![image-20240621下午44343942](img/image-20240621%E4%B8%8B%E5%8D%8844343942.png)
+
+可参照如下链接开启对应权限
+[修改注册表,开始win32时间同步器权限](https://blog.csdn.net/zb455405775/article/details/80679514)
+
+
+
+[Intellij Idea 开启管理员权限](https://blog.csdn.net/muzi_87/article/details/125823287)
