@@ -14,6 +14,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 import java.util.TimeZone;
 
 @Slf4j
@@ -59,7 +60,7 @@ public class ZoneServer {
             TimeZone.getDefault();
         }
         TimeZone timeZone = TimeZone.getDefault();
-        return timeZone.getID();
+        return timeZone.getDisplayName(false,TimeZone.LONG, Locale.ENGLISH);
     }
 
     public static String formatDate(Date date) {
